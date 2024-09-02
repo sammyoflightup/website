@@ -1,0 +1,1062 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 200px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav .link ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav .link ul a {
+    text-decoration: none;
+    color: #2a2a2a;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav .link ul a.active {
+    color: #f58f0a;
+}
+
+.nav .link ul a:hover {
+    color: hsl(29, 93%, 48%);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.main .men {
+    width: 400px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.main .men:hover {
+    transform: scale(1.3);
+}
+
+.main .main-detail {
+    color: #111;
+}
+
+.main .main-detail h1 {
+    font-size: 50px;
+}
+
+.main .main-detail h3.creative-designer {
+    font-size: 20px;
+    font-style: italic;
+    color: #333;
+}
+
+.main .btn {
+    margin-top: 20px;
+}
+
+.main .btn button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f58f0a;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main .btn button:hover {
+    background-color: #111;
+}
+
+.main .btn .btn-2 {
+    background-color: #333;
+}
+
+.main .btn .btn-2:hover {
+    background-color: #000;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    color: #333;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #f58f0a;
+}
+
+.sub-btn a {
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    padding: 10px 20px;
+    background: #f58f0a;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.sub-btn a.active {
+    background: black;
+}
+
+.sub-btn a:hover {
+    background: rgb(0, 0, 3);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 20px;
+    }
+
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main .men {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .main .main-detail h1 {
+        font-size: 36px;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        width: 90%;
+    }
+}
+
+/* About Section Styles */
+#about {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Work Section Styles */
+#work {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#work h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay .text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link-container a {
+    text-decoration: none;
+    color: #f7ab08;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.link-container a:hover {
+    color: #100358;
+}
+
+/* Experience */
+#experience, #contact {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #f5a40f;
+            text-align: center;
+        }
+        .job {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .job h3 {
+            margin: 0;
+            color: #555;
+        }
+        .job p {
+            margin: 5px 0;
+        }
+        .job ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .job li {
+            margin-bottom: 5px;
+        }
+       
+        <!-- Contact Section -->
+#contact {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f58f0a;
+}
+
+#contact p {
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #555;
+}
+
+#contact a {
+    color: #f58f0a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #333;
+}
+/* Core Competencies Style */
+#core-competencies {
+    margin: 20px 0;
+    max-width: 100%;
+    line-height: 1.6;
+    color: #020000;
+    text-align: left;  /* Aligns text to the left */
+    padding-left: 20px; /* Adds padding to create some space from the left edge */
+}
+
+/* Core Competencies Header */
+#core-competencies h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #020000;
+}
+
+/* Core Competencies List */
+#core-competencies ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Adds indentation to the list */
+}
+
+#core-competencies ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #020000;
+}
+/* Ensure full viewport height for the body */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Optional: Set a default font */
+}
+/* Layout Container Styling */
+.layout-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+/* Testimonials Section */
+#testimonials {
+    padding: 40px 20px; /* Add padding to the top and bottom and a little on the sides */
+    background-color: #f9f9f9; /* Background color for the section */
+    text-align: center; /* Center-align text */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+    margin: 0; /* Remove default margin */
+}
+
+/* Container for Testimonials */
+.testimonials-container {
+    max-width: 1200px; /* Max width of the content */
+    margin: 0 auto; /* Center align the container */
+    padding: 0 20px; /* Padding on left and right */
+}
+
+/* Heading */
+.testimonials-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Carousel Container */
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scroll */
+    gap: 20px; /* Space between items */
+}
+
+/* Testimonial Item */
+.testimonial-item {
+    min-width: 300px; /* Minimum width for each item */
+    flex: 1 0 auto; /* Allow items to grow and shrink */
+    box-sizing: border-box; /* Include padding and border in width */
+    padding: 20px; /* Padding inside the item */
+    border-radius: 8px; /* Rounded corners */
+    background: #fff; /* Background color of the item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle effect */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    font-size: 16px;
+    color: #f58f0a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #testimonials {
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
+    .testimonial-item {
+        min-width: 250px; /* Adjust minimum width for smaller screens */
+        padding: 15px; /* Reduce padding inside items */
+    }
+
+    .testimonial-text {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .testimonial-author {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+/* Contact Section */
+#contact {
+    padding: 40px;
+    background-color: #fff; /* Change background color to white */
+    text-align: center; /* Center-align text */
+    font-size: 18px;
+    color: #333;
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 800px; /* Limit the width of the section */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Contact Paragraph */
+#contact p {
+    margin: 0;
+}
+
+/* Contact Links */
+#contact a {
+    color: #f58f0a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#contact a:hover {
+    color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #contact {
+        padding: 20px; /* Reduce padding on smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #contact {
+        padding: 20px; /* Reduce padding on smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+        /* Footer Styles */
+footer {
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Padding around the text */
+    position: fixed; /* Make the footer stick to the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom of the page */
+    left: 0; /* Align to the left edge */
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f58f0a;
+    color: white;
+    margin-top: auto;
+}
+footer p {
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Adjust padding for small screens */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav .link ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Adjust gap for small screens */
+    list-style: none;
+}
+
+.nav .link ul a {
+    text-decoration: none;
+    color: #2a2a2a;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav .link ul a.active {
+    color: #f58f0a;
+}
+
+.nav .link ul a:hover {
+    color: hsl(29, 93%, 48%);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Adjust gap for small screens */
+    margin-top: 70px;
+    text-align: center;
+}
+
+.main .men {
+    width: 80%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Set a max-width for larger screens */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.main .men:hover {
+    transform: scale(1.3);
+}
+
+.main .main-detail {
+    color: #111;
+}
+
+.main .main-detail h1 {
+    font-size: 36px; /* Adjust font size for smaller screens */
+}
+
+.main .main-detail h3.creative-designer {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    font-style: italic;
+    color: #333;
+}
+
+.main .btn {
+    margin-top: 20px;
+}
+
+.main .btn button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f58f0a;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main .btn button:hover {
+    background-color: #111;
+}
+
+.main .btn .btn-2 {
+    background-color: #333;
+}
+
+.main .btn .btn-2:hover {
+    background-color: #000;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    color: #333;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #f58f0a;
+}
+
+.sub-btn a {
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    padding: 10px 20px;
+    background: #f58f0a;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.sub-btn a.active {
+    background: black;
+}
+
+.sub-btn a:hover {
+    background: rgb(0, 0, 3);
+}
+
+//* About Section */
+#about {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.about-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px; /* Set a max-width to control box size */
+    margin: 0 auto; /* Center the box horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.about-box h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-box p {
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .nav .link ul {
+        flex-direction: column;
+        gap: 1rem; /* Adjust gap for small screens */
+    }
+
+    .main {
+        flex-direction: column;
+        gap: 2rem; /* Adjust gap for small screens */
+        text-align: center;
+    }
+
+    .main .men {
+        width: 90%; /* Adjust width for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .main .main-detail h1 {
+        font-size: 28px; /* Adjust font size for smaller screens */
+    }
+
+    .main .main-detail h3.creative-designer {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .gallery-item {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 100%; /* Ensure no overflow */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav .link ul {
+        font-size: 14px; /* Adjust font size for very small screens */
+    }
+
+    .main .main-detail h1 {
+        font-size: 24px; /* Adjust font size for very small screens */
+    }
+
+    .main .main-detail h3.creative-designer {
+        font-size: 14px; /* Adjust font size for very small screens */
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto; /* Adjust height for smaller screens */
+    }
+}
+
+
+/* Experience Section Styles */
+#experience {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+#experience h1 {
+    text-align: center;
+    font-size: 24px; /* Slightly smaller font size for the main heading */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Space between the boxes */
+}
+
+.job {
+    flex: 1 1 calc(33% - 20px); /* 3 boxes per row with space between */
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Reduced padding for a more compact design */
+    transition: transform 0.3s ease;
+}
+
+.job:hover {
+    transform: scale(1.05);
+}
+
+.job h3 {
+    font-size: 18px; /* Moderate font size for job titles */
+    color: #f58f0a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px; /* Small space between letters */
+}
+
+.job p {
+    font-size: 14px; /* Slightly smaller font size for company and date */
+    margin-bottom: 10px;
+    color: #555;
+    letter-spacing: 0.5px; /* Small space between letters */
+}
+
+.job ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job ul li {
+    font-size: 14px; /* Moderate font size for list items */
+    margin-bottom: 8px; /* Reduced space between list items */
+    color: #666;
+    letter-spacing: 0.5px; /* Small space between letters */
+}
+
+@media (max-width: 768px) {
+    .job {
+        flex: 1 1 calc(50% - 20px); /* 2 boxes per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .job {
+        flex: 1 1 100%; /* 1 box per row on mobile devices */
+    }
+}
+#core-competencies {
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+#core-competencies h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.competencies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the boxes horizontally */
+}
+
+.competency {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px; /* Add padding to fit the text comfortably */
+    margin: 10px;
+    display: inline-block; /* Make the boxes fit content width */
+    text-align: center;
+}
+
+.competency h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Softwares Section */
+#softwares {
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+#softwares h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.softwares-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align boxes */
+}
+
+.software {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block; /* Makes boxes size to content */
+}
+/* Contact Section */
+#contact {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 0.9em; /* Smaller font size */
+    color: #333;
+    margin: 0;
+}
+
+#contact a {
+    color: #f58f0a; /* Highlight color for the email link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #111; /* Darker color on hover for better visibility */
+}
+
+/* Responsive Styles for Contact Section */
+@media (max-width: 768px) {
+    #contact p {
+        font-size: 0.85em; /* Slightly smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #contact p {
+        font-size: 0.8em; /* Even smaller font size for small screens */
+    }
+}
+
+
+
+/* Testimonials Section */
+#testimonials {
+    padding: 40px 20px; /* Add padding to the top and bottom and a little on the sides */
+    background-color: #f9f9f9; /* Background color for the section */
+    text-align: center; /* Center-align text */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+    margin: 0; /* Remove default margin */
+}
+
+/* Container for Testimonials */
+.testimonials-container {
+    max-width: 1200px; /* Max width of the content */
+    margin: 0 auto; /* Center align the container */
+    padding: 0 20px; /* Padding on left and right */
+}
+
+/* Heading */
+.testimonials-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Carousel Container */
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scroll */
+    gap: 20px; /* Space between items */
+}
+
+/* Testimonial Item */
+.testimonial-item {
+    min-width: 300px; /* Minimum width for each item */
+    flex: 1 0 auto; /* Allow items to grow and shrink */
+    box-sizing: border-box; /* Include padding and border in width */
+    padding: 20px; /* Padding inside the item */
+    border-radius: 8px; /* Rounded corners */
+    background: #fff; /* Background color of the item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle effect */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    font-size: 16px;
+    color: #f58f0a;
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body and Main Layout */
+body {
+    opacity: 0;
+    transition: opacity 3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes full viewport height */
+}
+
+/* Contact Section */
+#contact {
+    padding: 20px; /* Adds space inside the box */
+    background-color: #fff; /* White background for the box */
+    border: 1px solid #ddd; /* Light border for the box */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Centers the box horizontally with margin above and below */
+    max-width: 600px; /* Maximum width of the box */
+    text-align: center; /* Centers the text inside the box */
+}
+
+#contact p {
+    font-size: 0.9em; /* Smaller font size */
+    color: #333; /* Text color */
+    margin: 0; /* Removes default margin */
+}
+
+#contact a {
+    color: #f58f0a; /* Highlight color for the email link */
+    font-weight: bold; /* Makes the link bold */
+    text-decoration: none; /* Removes underline from the link */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+#contact a:hover {
+    color: #111; /* Darker color on hover for better visibility */
+}
+
+
+
+
+
+/* Footer Section */
+footer {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 20px; /* Provides space between the contact section and the footer */
+    border-radius: 8px;
+}
+
+
+
+© 2024 Samuel George. All rights reserved.
