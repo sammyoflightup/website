@@ -146,55 +146,174 @@ body {
     background: rgb(0, 0, 3);
 }
 
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .nav {
         padding: 20px;
+        flex-direction: column; /* Stack navigation items */
+    }
+
+    .nav .link ul {
+        flex-direction: column; /* Vertical alignment for links */
+        gap: 1rem;
+        align-items: flex-start; /* Align links to start */
     }
 
     .main {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Stack main content */
+        gap: 2rem;
     }
 
     .main .men {
-        width: 80%;
+        width: 80%; /* Responsive width for images */
         margin-bottom: 20px;
     }
 
     .main .main-detail h1 {
-        font-size: 36px;
+        font-size: 36px; /* Adjust heading size */
     }
 
-    .gallery-container {
-        flex-direction: column;
-        align-items: center;
+    .main .btn button {
+        width: 100%; /* Full-width buttons */
+        margin-top: 10px;
     }
 
-    .gallery-item {
-        width: 90%;
+    .social a {
+        font-size: 20px; /* Adjust social icon size */
+    }
+
+    .sub-btn {
+        position: static; /* Positioning for mobile */
+        margin-top: 20px;
+    }
+
+    .sub-btn a {
+        width: 100%; /* Full-width button on mobile */
+        padding: 15px 0;
+        font-size: 18px;
+        text-align: center;
+        display: block;
     }
 }
 
-/* About Section Styles */
+@media (max-width: 480px) {
+    .main .main-detail h1 {
+        font-size: 28px; /* Smaller heading for mobile */
+    }
+
+    .main .main-detail h3.creative-designer {
+        font-size: 18px; /* Adjust subheading size */
+    }
+
+    .main .btn button {
+        font-size: 16px; /* Adjust button text size */
+    }
+}
+
+
+
+/* ABOUT SECTION */
+
 #about {
-    padding: 40px;
-    background-color: #fff;
+    margin: 2rem 0;
     text-align: center;
 }
 
-#about h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
+#about .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 #about p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
     max-width: 800px;
     margin: 0 auto;
+    line-height: 1.6;
 }
+
+/* EXPERIENCE SECTION */
+
+#experience {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+#experience .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f09620;
+}
+
+.experience-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.details-container {
+    padding: 1.5rem;
+    background: rgb(247, 246, 244);
+    border-radius: 2rem;
+    border: 1px solid rgb(163, 163, 163);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.details-container h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.details-container p {
+    line-height: 1.5;
+}
+
+/* GENERAL STYLES */
+
+.arrow {
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.section-container {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .experience-details-container {
+        flex-direction: column;
+    }
+
+    .details-container {
+        width: 90%;
+    }
+}
+html, body {
+    height: 100%; /* Ensure the body takes up the full height */
+    margin: 0; /* Remove default margin */
+}
+
+#experience {
+    position: relative; /* Ensure the positioning context */
+    height: 100vh; /* Full viewport height */
+    background-image: url('./images/R.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    padding: 2rem; /* Add some padding */
+    color: rgb(255, 255, 255); /* Change text color for visibility */
+    display: flex; /* Optional: Use flexbox for alignment */
+    flex-direction: column; /* Optional: Column layout */
+    justify-content: center; /* Optional: Center content vertically */
+    align-items: center; /* Optional: Center content horizontally */
+}
+
 
 /* Work Section Styles */
 #work {
@@ -259,7 +378,7 @@ body {
 }
 
 .overlay .text {
-    color: #fff;
+    color: #f5900c;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -281,161 +400,70 @@ body {
     color: #100358;
 }
 
-/* Experience */
-#experience, #contact {
-    padding: 40px;
-    background-color: #fff;
+/* Experience Section */
+#experience {
+    background: url('./images/R.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 50px 0;
+}
+
+#experience h1 {
     text-align: center;
+    margin-bottom: 40px;
+    color: #fff; /* Change text color for contrast */
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Experience</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h2 {
-            color: #f5a40f;
-            text-align: center;
-        }
-        .job {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        .job h3 {
-            margin: 0;
-            color: #555;
-        }
-        .job p {
-            margin: 5px 0;
-        }
-        .job ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-        .job li {
-            margin-bottom: 5px;
-        }
-       
-        <!-- Contact Section -->
-#contact {
-    padding: 40px;
-    background-color: #f9f9f9;
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.experience-card {
+    flex: 1 1 30%;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 18px;
-    color: #333;
+    transition: transform 0.3s;
 }
 
-#contact h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #f58f0a;
+.experience-card h3 {
+    color: #333; /* Darker color for headings */
+    margin-bottom: 15px;
 }
 
-#contact p {
-    margin: 0 auto;
-    max-width: 600px;
-    line-height: 1.6;
-    color: #555;
+.experience-card ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-#contact a {
-    color: #f58f0a;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+.experience-card ul li {
+    margin: 5px 0; /* Space between list items */
 }
 
-#contact a:hover {
-    color: #333;
-}
-/* Core Competencies Style */
-#core-competencies {
-    margin: 20px 0;
-    max-width: 100%;
-    line-height: 1.6;
-    color: #020000;
-    text-align: left;  /* Aligns text to the left */
-    padding-left: 20px; /* Adds padding to create some space from the left edge */
+.experience-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
-/* Core Competencies Header */
-#core-competencies h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #020000;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .experience-card {
+        flex: 1 1 45%; /* Two cards per row on smaller screens */
+    }
 }
 
-/* Core Competencies List */
-#core-competencies ul {
-    list-style-type: disc;
-    padding-left: 20px; /* Adds indentation to the list */
+@media (max-width: 480px) {
+    .experience-card {
+        flex: 1 1 100%; /* One card per row on very small screens */
+    }
 }
 
-#core-competencies ul li {
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #020000;
-}
-/* Ensure full viewport height for the body */
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif; /* Optional: Set a default font */
-}
-/* Layout Container Styling */
-.layout-container {
-    display: flex;
-    height: 100vh; /* Full viewport height */
-}
-/* Testimonials Section */
-#testimonials {
-    padding: 40px 20px; /* Add padding to the top and bottom and a little on the sides */
-    background-color: #f9f9f9; /* Background color for the section */
-    text-align: center; /* Center-align text */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width */
-    margin: 0; /* Remove default margin */
-}
 
-/* Container for Testimonials */
-.testimonials-container {
-    max-width: 1200px; /* Max width of the content */
-    margin: 0 auto; /* Center align the container */
-    padding: 0 20px; /* Padding on left and right */
-}
-
-/* Heading */
-.testimonials-container h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Carousel Container */
-.testimonial-carousel {
-    display: flex;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scroll */
-    gap: 20px; /* Space between items */
-}
-
-/* Testimonial Item */
-.testimonial-item {
-    min-width: 300px; /* Minimum width for each item */
-    flex: 1 0 auto; /* Allow items to grow and shrink */
-    box-sizing: border-box; /* Include padding and border in width */
-    padding: 20px; /* Padding inside the item */
-    border-radius: 8px; /* Rounded corners */
-    background: #fff; /* Background color of the item */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle effect */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-}
 
 /* Testimonial Text */
 .testimonial-text {
@@ -842,65 +870,47 @@ body {
         flex: 1 1 100%; /* 1 box per row on mobile devices */
     }
 }
-#core-competencies {
-    padding: 20px;
-    background-color: #e9ecef;
+section {
+    padding: 40px 20px;
 }
-
-#core-competencies h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.competencies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the boxes horizontally */
-}
-
-.competency {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px 20px; /* Add padding to fit the text comfortably */
-    margin: 10px;
-    display: inline-block; /* Make the boxes fit content width */
-    text-align: center;
-}
-
-.competency h3 {
-    font-size: 1.2em;
-    margin: 0;
-}
-
-/* Softwares Section */
+/* Softwares Section Styles */
 #softwares {
-    padding: 20px;
-    background-color: #e9ecef;
-}
-
-#softwares h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center; /* Center text */
 }
 
 .softwares-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center align boxes */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between items */
+    max-width: 800px; /* Set a max width for the container */
+    margin: 0 auto; /* Center the container */
 }
 
 .software {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    display: inline-block; /* Makes boxes size to content */
+    background-color: white; /* Background for each software box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 15px; /* Padding inside each box */
+    width: 120px; /* Fixed width for software boxes */
+    text-align: center; /* Center text inside the box */
 }
+
+.software-icon {
+    max-width: 60px; /* Limit icon size */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .software {
+        width: 80px; /* Smaller width for mobile */
+    }
+}
+
+
 /* Contact Section */
 #contact {
     padding: 20px;
@@ -1028,7 +1038,7 @@ body {
 #contact p {
     font-size: 0.9em; /* Smaller font size */
     color: #333; /* Text color */
-    margin: 0; /* Removes default margin */
+    margin: 3; /* Removes default margin */
 }
 
 #contact a {
