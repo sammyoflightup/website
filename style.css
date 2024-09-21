@@ -252,7 +252,7 @@ body {
 
 .details-container {
     padding: 1.5rem;
-    background: rgb(247, 246, 244);
+    background: rgb(238, 161, 8);
     border-radius: 2rem;
     border: 1px solid rgb(163, 163, 163);
     text-align: center;
@@ -1038,7 +1038,7 @@ body {
 #contact p {
     font-size: 0.9em; /* Smaller font size */
     color: #333; /* Text color */
-    margin: 3; /* Removes default margin */
+    margin: 0; /* Removes default margin */
 }
 
 #contact a {
