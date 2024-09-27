@@ -1,8 +1,13 @@
-document.querySelector('.sub-btn a').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent the default action
-    const button = this;
-    button.classList.add('active');
-    setTimeout(() => {
-        button.classList.remove('active');
-    }, 5000);
-});
+@media (max-width: 768px) {
+    .your-element {
+        /* Adjust styles for small screens */
+        flex-direction: column; /* Example */
+    }
+}
+.your-element {
+    width: 100%; /* Adjust to fill the container */
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+}

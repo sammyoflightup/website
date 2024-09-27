@@ -314,6 +314,69 @@ html, body {
     align-items: center; /* Optional: Center content horizontally */
 }
 
+/* Experience Section */
+#experience {
+    background: url('./images/R.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 50px 0;
+}
+
+#experience h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff; /* Change text color for contrast */
+}
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.experience-card {
+    flex: 1 1 30%;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.experience-card h3 {
+    color: #333; /* Darker color for headings */
+    margin-bottom: 15px;
+}
+
+.experience-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-card ul li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.experience-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .experience-card {
+        flex: 1 1 45%; /* Two cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        flex: 1 1 100%; /* One card per row on very small screens */
+    }
+}
+
 
 /* Work Section Styles */
 #work {
@@ -399,68 +462,13 @@ html, body {
 .link-container a:hover {
     color: #100358;
 }
-
-/* Experience Section */
-#experience {
-    background: url('./images/R.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 50px 0;
-}
-
-#experience h1 {
+#work {
+    padding: 40px;
+    background-image: url('images/softwares\ image.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the whole section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     text-align: center;
-    margin-bottom: 40px;
-    color: #fff; /* Change text color for contrast */
-}
-
-.experience-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.experience-card {
-    flex: 1 1 30%;
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.experience-card h3 {
-    color: #333; /* Darker color for headings */
-    margin-bottom: 15px;
-}
-
-.experience-card ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.experience-card ul li {
-    margin: 5px 0; /* Space between list items */
-}
-
-.experience-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .experience-card {
-        flex: 1 1 45%; /* Two cards per row on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .experience-card {
-        flex: 1 1 100%; /* One card per row on very small screens */
-    }
 }
 
 
