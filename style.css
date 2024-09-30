@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap');
+@@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap');
 
 * {
     margin: 0;
@@ -16,6 +16,10 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .nav {
@@ -25,6 +29,11 @@ body {
     padding: 40px 200px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed; /* Keep nav fixed at top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the nav is above other content */
 }
 
 .nav .link ul {
@@ -55,22 +64,27 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6rem;
-    margin-top: 70px;
+    margin-top: 150px; /* Adjusted to account for the fixed nav */
     text-align: center;
+    flex-wrap: wrap; /* Ensure content wraps properly on smaller screens */
+    padding: 0 20px; /* Add padding for smaller screens */
 }
 
 .main .men {
     width: 400px;
+    max-width: 100%; /* Ensure the image scales properly on smaller screens */
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .main .men:hover {
-    transform: scale(1.3);
+    transform: scale(1.1); /* Slightly reduce scale to avoid too much zoom on smaller screens */
 }
 
 .main .main-detail {
     color: #111;
+    max-width: 600px; /* Prevent text from becoming too wide */
+    width: 100%;
 }
 
 .main .main-detail h1 {
@@ -85,6 +99,9 @@ body {
 
 .main .btn {
     margin-top: 20px;
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+    justify-content: center;
 }
 
 .main .btn button {
@@ -147,34 +164,44 @@ body {
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .nav {
+        padding: 20px 50px; /* Reduce padding on tablets */
+    }
+
+    .main {
+        gap: 3rem; /* Adjust gap between main content */
+    }
+}
+
 @media (max-width: 768px) {
     .nav {
-        padding: 20px;
-        flex-direction: column; /* Stack navigation items */
+        padding: 20px; /* Even smaller padding */
+        flex-direction: column; /* Stack navigation items vertically */
     }
 
     .nav .link ul {
         flex-direction: column; /* Vertical alignment for links */
         gap: 1rem;
-        align-items: flex-start; /* Align links to start */
+        align-items: flex-start; /* Align links to the left */
     }
 
     .main {
-        flex-direction: column; /* Stack main content */
-        gap: 2rem;
+        flex-direction: column; /* Stack main content vertically */
+        gap: 2rem; /* Smaller gap */
     }
 
     .main .men {
-        width: 80%; /* Responsive width for images */
+        width: 80%; /* Ensure image is responsive */
         margin-bottom: 20px;
     }
 
     .main .main-detail h1 {
-        font-size: 36px; /* Adjust heading size */
+        font-size: 36px; /* Adjust heading size for tablets */
     }
 
     .main .btn button {
-        width: 100%; /* Full-width buttons */
+        width: 100%; /* Full-width buttons on smaller screens */
         margin-top: 10px;
     }
 
@@ -183,8 +210,9 @@ body {
     }
 
     .sub-btn {
-        position: static; /* Positioning for mobile */
+        position: static; /* Remove absolute positioning */
         margin-top: 20px;
+        width: 100%; /* Full width on mobile */
     }
 
     .sub-btn a {
@@ -198,7 +226,7 @@ body {
 
 @media (max-width: 480px) {
     .main .main-detail h1 {
-        font-size: 28px; /* Smaller heading for mobile */
+        font-size: 28px; /* Smaller heading for small screens */
     }
 
     .main .main-detail h3.creative-designer {
@@ -208,12 +236,15 @@ body {
     .main .btn button {
         font-size: 16px; /* Adjust button text size */
     }
+
+    .sub-btn a {
+        font-size: 16px; /* Adjust submit button text size */
+    }
 }
 
 
 
 /* ABOUT SECTION */
-
 #about {
     margin: 2rem 0;
     text-align: center;
@@ -228,13 +259,24 @@ body {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    padding: 0 1rem; /* Padding for smaller screens */
 }
 
 /* EXPERIENCE SECTION */
-
 #experience {
     margin: 2rem 0;
     text-align: center;
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('./images/R.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #experience .title {
@@ -245,8 +287,8 @@ body {
 
 .experience-details-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -270,7 +312,6 @@ body {
 }
 
 /* GENERAL STYLES */
-
 .arrow {
     position: absolute;
     right: -5rem;
@@ -279,54 +320,13 @@ body {
 
 .section-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 4rem;
     justify-content: center;
     margin-top: 2rem;
 }
 
-/* MEDIA QUERIES */
-
-@media (max-width: 768px) {
-    .experience-details-container {
-        flex-direction: column;
-    }
-
-    .details-container {
-        width: 90%;
-    }
-}
-html, body {
-    height: 100%; /* Ensure the body takes up the full height */
-    margin: 0; /* Remove default margin */
-}
-
-#experience {
-    position: relative; /* Ensure the positioning context */
-    height: 100vh; /* Full viewport height */
-    background-image: url('./images/R.jpg'); /* Replace with your image path */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
-    padding: 2rem; /* Add some padding */
-    color: rgb(255, 255, 255); /* Change text color for visibility */
-    display: flex; /* Optional: Use flexbox for alignment */
-    flex-direction: column; /* Optional: Column layout */
-    justify-content: center; /* Optional: Center content vertically */
-    align-items: center; /* Optional: Center content horizontally */
-}
-
 /* Experience Section */
-#experience {
-    background: url('./images/R.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 50px 0;
-}
-
-#experience h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #fff; /* Change text color for contrast */
-}
-
 .experience-container {
     display: flex;
     flex-wrap: wrap;
@@ -344,10 +344,11 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s;
+    max-width: 100%;
 }
 
 .experience-card h3 {
-    color: #333; /* Darker color for headings */
+    color: #333;
     margin-bottom: 15px;
 }
 
@@ -357,23 +358,76 @@ html, body {
 }
 
 .experience-card ul li {
-    margin: 5px 0; /* Space between list items */
+    margin: 5px 0;
 }
 
 .experience-card:hover {
     transform: translateY(-5px); /* Lift effect on hover */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* MEDIA QUERIES */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+    #about .title,
+    #experience .title {
+        font-size: 2rem;
+    }
+
     .experience-card {
-        flex: 1 1 45%; /* Two cards per row on smaller screens */
+        flex: 1 1 45%; /* 2 cards per row on tablets */
+    }
+
+    #experience {
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+        height: auto; /* Remove height restriction */
     }
 }
 
-@media (max-width: 480px) {
+/* Small tablets and large mobile devices */
+@media (max-width: 768px) {
+    .experience-details-container,
+    .experience-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .details-container {
+        width: 90%; /* Increase width for smaller screens */
+        max-width: none;
+    }
+
     .experience-card {
-        flex: 1 1 100%; /* One card per row on very small screens */
+        flex: 1 1 100%; /* 1 card per row on mobile */
+    }
+
+    #about p {
+        padding: 0 1.5rem; /* More padding for better readability */
+    }
+}
+
+/* Mobile devices (small screens) */
+@media (max-width: 480px) {
+    #about .title,
+    #experience .title {
+        font-size: 1.8rem; /* Smaller text size */
+    }
+
+    #about p,
+    .details-container p {
+        font-size: 1rem; /* Smaller paragraph font size */
+    }
+
+    .details-container h3 {
+        font-size: 1.3rem; /* Adjust title size */
+    }
+
+    .experience-container {
+        gap: 1.5rem; /* Smaller gaps between cards */
+    }
+
+    .arrow {
+        right: -3rem; /* Adjust arrow position */
     }
 }
 
@@ -462,6 +516,7 @@ html, body {
 .link-container a:hover {
     color: #100358;
 }
+
 #work {
     padding: 40px;
     background-image: url('images/softwares\ image.jpg'); /* Replace with your image path */
@@ -470,8 +525,6 @@ html, body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     text-align: center;
 }
-
-
 
 /* Testimonial Text */
 .testimonial-text {
@@ -489,23 +542,25 @@ html, body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    #testimonials {
-        padding: 20px 10px; /* Reduce padding on smaller screens */
+    #work {
+        padding: 20px; /* Reduce padding on smaller screens */
     }
 
-    .testimonial-item {
-        min-width: 250px; /* Adjust minimum width for smaller screens */
-        padding: 15px; /* Reduce padding inside items */
+    #work h2 {
+        font-size: 28px; /* Adjust font size */
     }
 
-    .testimonial-text {
-        font-size: 16px; /* Adjust font size */
+    .gallery-container {
+        flex-direction: column; /* Stack items vertically on small screens */
     }
 
-    .testimonial-author {
-        font-size: 14px; /* Adjust font size */
+    .gallery-item {
+        width: 90%; /* Full width for smaller screens */
+        max-width: 300px; /* Ensure no overflow */
+        margin: 10px auto; /* Center the item */
     }
 }
+
 /* Contact Section */
 #contact {
     padding: 40px;
@@ -534,7 +589,7 @@ html, body {
     color: #333;
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Contact Section */
 @media (max-width: 768px) {
     #contact {
         padding: 20px; /* Reduce padding on smaller screens */
@@ -542,28 +597,18 @@ html, body {
     }
 }
 
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    #contact {
-        padding: 20px; /* Reduce padding on smaller screens */
-        font-size: 16px; /* Adjust font size for smaller screens */
-    }
-}
-
-
-
-        /* Footer Styles */
+/* Footer Styles */
 footer {
     background-color: #333; /* Background color for the footer */
     color: #fff; /* Text color */
     text-align: center; /* Center the text */
     padding: 20px; /* Padding around the text */
-    position: fixed; /* Make the footer stick to the bottom */
+    position: relative; /* Make the footer relative */
     width: 100%; /* Full width */
     bottom: 0; /* Stick to the bottom of the page */
     left: 0; /* Align to the left edge */
 }
+
 footer {
     text-align: center;
     padding: 20px;
@@ -571,9 +616,11 @@ footer {
     color: white;
     margin-top: auto;
 }
+
 footer p {
     margin: 0;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap');
 
 * {
@@ -723,7 +770,7 @@ body {
     background: rgb(0, 0, 3);
 }
 
-//* About Section */
+/* About Section */
 #about {
     padding: 20px;
     background-color: #f8f9fa; /* Light background color */
@@ -806,215 +853,7 @@ body {
 }
 
 
-/* Experience Section Styles */
-#experience {
-    padding: 40px;
-    background-color: #f9f9f9;
-}
 
-#experience h1 {
-    text-align: center;
-    font-size: 24px; /* Slightly smaller font size for the main heading */
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.experience-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px; /* Space between the boxes */
-}
-
-.job {
-    flex: 1 1 calc(33% - 20px); /* 3 boxes per row with space between */
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px; /* Reduced padding for a more compact design */
-    transition: transform 0.3s ease;
-}
-
-.job:hover {
-    transform: scale(1.05);
-}
-
-.job h3 {
-    font-size: 18px; /* Moderate font size for job titles */
-    color: #f58f0a;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px; /* Small space between letters */
-}
-
-.job p {
-    font-size: 14px; /* Slightly smaller font size for company and date */
-    margin-bottom: 10px;
-    color: #555;
-    letter-spacing: 0.5px; /* Small space between letters */
-}
-
-.job ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.job ul li {
-    font-size: 14px; /* Moderate font size for list items */
-    margin-bottom: 8px; /* Reduced space between list items */
-    color: #666;
-    letter-spacing: 0.5px; /* Small space between letters */
-}
-
-@media (max-width: 768px) {
-    .job {
-        flex: 1 1 calc(50% - 20px); /* 2 boxes per row on tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .job {
-        flex: 1 1 100%; /* 1 box per row on mobile devices */
-    }
-}
-section {
-    padding: 40px 20px;
-}
-/* Softwares Section Styles */
-#softwares {
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    text-align: center; /* Center text */
-}
-
-.softwares-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: center; /* Center items */
-    gap: 20px; /* Space between items */
-    max-width: 800px; /* Set a max width for the container */
-    margin: 0 auto; /* Center the container */
-}
-
-.software {
-    background-color: white; /* Background for each software box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 15px; /* Padding inside each box */
-    width: 120px; /* Fixed width for software boxes */
-    text-align: center; /* Center text inside the box */
-}
-
-.software-icon {
-    max-width: 60px; /* Limit icon size */
-    margin-bottom: 10px; /* Space between icon and text */
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .software {
-        width: 80px; /* Smaller width for mobile */
-    }
-}
-
-
-/* Contact Section */
-#contact {
-    padding: 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#contact p {
-    font-size: 0.9em; /* Smaller font size */
-    color: #333;
-    margin: 0;
-}
-
-#contact a {
-    color: #f58f0a; /* Highlight color for the email link */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-#contact a:hover {
-    color: #111; /* Darker color on hover for better visibility */
-}
-
-/* Responsive Styles for Contact Section */
-@media (max-width: 768px) {
-    #contact p {
-        font-size: 0.85em; /* Slightly smaller font size for medium screens */
-    }
-}
-
-@media (max-width: 480px) {
-    #contact p {
-        font-size: 0.8em; /* Even smaller font size for small screens */
-    }
-}
-
-
-
-/* Testimonials Section */
-#testimonials {
-    padding: 40px 20px; /* Add padding to the top and bottom and a little on the sides */
-    background-color: #f9f9f9; /* Background color for the section */
-    text-align: center; /* Center-align text */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width */
-    margin: 0; /* Remove default margin */
-}
-
-/* Container for Testimonials */
-.testimonials-container {
-    max-width: 1200px; /* Max width of the content */
-    margin: 0 auto; /* Center align the container */
-    padding: 0 20px; /* Padding on left and right */
-}
-
-/* Heading */
-.testimonials-container h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Carousel Container */
-.testimonial-carousel {
-    display: flex;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scroll */
-    gap: 20px; /* Space between items */
-}
-
-/* Testimonial Item */
-.testimonial-item {
-    min-width: 300px; /* Minimum width for each item */
-    flex: 1 0 auto; /* Allow items to grow and shrink */
-    box-sizing: border-box; /* Include padding and border in width */
-    padding: 20px; /* Padding inside the item */
-    border-radius: 8px; /* Rounded corners */
-    background: #fff; /* Background color of the item */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle effect */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-}
-
-/* Testimonial Text */
-.testimonial-text {
-    font-size: 18px;
-    color: #555;
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-/* Testimonial Author */
-.testimonial-author {
-    font-size: 16px;
-    color: #f58f0a;
-}
 /* General Reset */
 * {
     margin: 0;
@@ -1032,6 +871,198 @@ body {
     min-height: 100vh; /* Ensure the body takes full viewport height */
 }
 
+/* Experience Section Styles */
+#experience {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+#experience h1 {
+    text-align: center;
+    font-size: 24px; 
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items for better alignment */
+    gap: 20px;
+}
+
+.job {
+    flex: 1 1 calc(33% - 20px); 
+    max-width: 300px; /* Limit max width for each job box */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.job:hover {
+    transform: scale(1.05);
+}
+
+.job h3 {
+    font-size: 18px; 
+    color: #f58f0a;
+    margin-bottom: 10px;
+}
+
+.job p, .job ul li {
+    font-size: 14px; 
+    color: #555;
+}
+
+/* Responsive Styles for Experience Section */
+@media (max-width: 768px) {
+    .job {
+        flex: 1 1 calc(50% - 20px); /* 2 boxes per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .job {
+        flex: 1 1 100%; /* 1 box per row on mobile devices */
+    }
+}
+
+/* Softwares Section Styles */
+#softwares {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.softwares-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px;
+}
+
+.software {
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 15px;
+    width: 120px; 
+    text-align: center; 
+}
+
+.software-icon {
+    max-width: 60px; 
+}
+
+/* Responsive adjustments for Software Section */
+@media (max-width: 600px) {
+    .software {
+        width: 80px; 
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 0.9em; 
+    color: #333;
+}
+
+#contact a {
+    color: #f58f0a; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #111; 
+}
+
+/* Responsive Styles for Contact Section */
+@media (max-width: 768px) {
+    #contact p {
+        font-size: 0.85em; 
+    }
+}
+
+@media (max-width: 480px) {
+    #contact p {
+        font-size: 0.8em; 
+    }
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 40px 20px; 
+    background-color: #f9f9f9; 
+    text-align: center; 
+}
+
+.testimonials-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.testimonials-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
+    gap: 20px; 
+}
+
+.testimonial-item {
+    min-width: 300px; 
+    flex: 1 0 auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    background: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    font-size: 16px;
+    color: #f58f0a;
+}
+
+/* Responsive Styles for Testimonials Section */
+@media (max-width: 768px) {
+    .testimonial-item {
+        min-width: 200px; /* Adjust minimum width for smaller screens */
+        padding: 15px; /* Reduce padding inside items */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f58f0a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+
 /* Contact Section */
 #contact {
     padding: 20px; /* Adds space inside the box */
@@ -1043,12 +1074,14 @@ body {
     text-align: center; /* Centers the text inside the box */
 }
 
+/* Paragraphs in Contact Section */
 #contact p {
     font-size: 0.9em; /* Smaller font size */
     color: #333; /* Text color */
     margin: 0; /* Removes default margin */
 }
 
+/* Links in Contact Section */
 #contact a {
     color: #f58f0a; /* Highlight color for the email link */
     font-weight: bold; /* Makes the link bold */
@@ -1056,25 +1089,54 @@ body {
     transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
+/* Links hover effect */
 #contact a:hover {
     color: #111; /* Darker color on hover for better visibility */
 }
 
+/* Responsive Styles for Contact Section */
+@media (max-width: 768px) {
+    #contact {
+        padding: 15px; /* Adjust padding for medium screens */
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
 
+    #contact p {
+        font-size: 0.85em; /* Slightly smaller font size for medium screens */
+    }
+}
 
+@media (max-width: 480px) {
+    #contact {
+        padding: 10px; /* Further reduce padding for mobile devices */
+        max-width: 100%; /* Full width on mobile devices */
+    }
 
+    #contact p {
+        font-size: 0.8em; /* Even smaller font size for small screens */
+    }
+}
 
 /* Footer Section */
 footer {
     padding: 10px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    font-size: 0.8em;
+    background-color: #333; /* Dark background for the footer */
+    color: #fff; /* White text color */
+    text-align: center; /* Center text in footer */
+    font-size: 0.8em; /* Font size for footer */
     margin-top: 20px; /* Provides space between the contact section and the footer */
     border-radius: 8px;
 }
 
+/* Responsive Styles for Footer */
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.75em; /* Slightly smaller font size for medium screens */
+    }
+}
 
-
-© 2024 Samuel George. All rights reserved.
+@media (max-width: 480px) {
+    footer {
+        font-size: 0.7em; /* Even smaller font size for small screens */
+    }
+}
