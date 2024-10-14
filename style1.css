@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Center vertically */
+    background-color: #000; /* Set background color to black */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding around the body */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between boxes */
+    width: 100%; /* Full width of the page */
+    max-width: 900px; /* Reduced maximum width for the container */
+    margin: auto; /* Center the container */
+}
+
+.box {
+    width: 240px; /* Reduced box width */
+    height: 240px; /* Reduced box height */
+    border: 5px solid #ffffff; /* Box edge color */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.3s; /* Smooth zoom effect */
+}
+
+.box:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.box img {
+    width: 100%; /* Image takes full width */
+    height: auto; /* Maintain aspect ratio */
+}
